@@ -46,6 +46,12 @@ exports.singIn = async (req, res) => {
   }
 };
 
+// log user out
+exports.logout = (req, res) => {
+  // send empty cookie with an already expired date
+  res.cookie('token', '', { expires: new Date(0), httpOnly: true }).send();
+};
+
 // is loggedin return true if valid token and false other wise
 exports.isLoggedIn = (req, res) => {
   try {
