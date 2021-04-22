@@ -1,11 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
 
 require('dotenv').config();
 
 // app
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 
 // mongoose
 mongoose.connect(
