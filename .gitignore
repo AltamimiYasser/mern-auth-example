@@ -1,5 +1,4 @@
 node_modules
-.rest
 .env
 errorsFormat.json
 .vscode

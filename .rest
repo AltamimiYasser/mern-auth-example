@@ -1,0 +1,40 @@
+### register a user
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "email": "altamimiy8999@gmail.com",
+    "password": "password"
+}
+
+
+### log user in
+POST http://localhost:5000/api/auth/signin
+Content-Type: application/json
+
+{
+    "email": "altamimiy89@gmail.com",
+    "password": "password"
+}
+
+
+### log out
+GET http://localhost:5000/api/auth/logout
+
+
+### isloggedin
+GET http://localhost:5000/api/auth/loggedin
+
+
+### create contact
+POST http://localhost:5000/api/contacts
+Content-Type: application/json
+
+{
+    "name": "Yasser",
+    "phoneNumber": "05566"
+}
+
+
+### get all contacts
+GET http://localhost:5000/api/contacts
