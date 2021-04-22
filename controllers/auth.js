@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 
 const User = require('../models/User');
 
+// register user
 exports.register = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -21,6 +22,23 @@ exports.register = async (req, res) => {
     const token = jwt.sign({ user: savedUser._id }, process.env.TOKEN_SECRET);
 
     // return token in cookie
+    res.cookie('token', token, { httpOnly: true }).send();
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: [{ msg: 'Server error' }] });
+  }
+};
+
+// sign user in
+exports.singIn = async (req, res) => {
+  try {
+    // get user
+    const user = await User.findOne({ email: req.body.email });
+
+    // create token
+    const token = jwt.sign({ user: user._id }, process.env.TOKEN_SECRET);
+
+    // return it
     res.cookie('token', token, { httpOnly: true }).send();
   } catch (err) {
     console.error(err);
