@@ -18,6 +18,7 @@ mongoose.connect(
 
 // routes
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/contacts', require('./routes/contacts'));
 
 // production prep ALWAYS LAST
 if (process.env.NODE_ENV === 'production') {

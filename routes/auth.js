@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { register, singIn, logout, isLoggedIn } = require('../controllers/auth');
-const { validateRegister, validateSignIn } = require('../utils/validation');
+const { validateRegister, validateSignIn } = require('../utils/authValidation');
 
 // PREFIX: /api/auth
 
