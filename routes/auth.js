@@ -1,12 +1,14 @@
 const router = require('express').Router();
-const { register } = require('../controllers/auth');
-const { validateRegister } = require('../utils/validation');
+const { register, singIn } = require('../controllers/auth');
+const { validateRegister, validateSignIn } = require('../utils/validation');
+
+// PREFIX: /api/auth
 
 // register user route
-// api/auth/register
 router.post('/register', validateRegister, register);
 
 // user sign in route
+router.post('/signin', validateSignIn, singIn);
 
 // get user status isLoggedIn
 
