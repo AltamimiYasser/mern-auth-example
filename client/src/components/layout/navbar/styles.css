@@ -35,11 +35,27 @@ header {
   padding: 0 20px;
 }
 
+.logout,
 .link {
   transition: all 0.3 ease 0s;
   color: #edf0f1;
 }
 
+.logout:hover,
 .link:hover {
   color: #0088a9;
+  cursor: pointer;
+}
+
+.logout {
+  font-size: 1rem;
+  background: transparent;
+  color: #fff;
+  border: none;
+  box-shadow: none;
+  width: fit-content;
+  height: fit-content;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
 }

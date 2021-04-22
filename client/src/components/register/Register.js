@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import './styles.css';
 import LoggedInContext from '../../context/LoggedInContext';
@@ -10,6 +10,8 @@ const Register = () => {
   const [passwordVerify, setPasswordVerify] = useState('');
 
   const { getLoggedIn } = useContext(LoggedInContext);
+
+  const history = useHistory();
 
   const registerUser = async (e) => {
     e.preventDefault();
@@ -24,6 +26,7 @@ const Register = () => {
         await getLoggedIn();
         console.log('success');
         // TODO: create alert
+        history.push('contacts');
       }
     } catch (err) {
       console.error(err);
@@ -57,7 +60,7 @@ const Register = () => {
       </form>
       <p>
         Already have an account?{' '}
-        <Link to='signin' className='sign-link'>
+        <Link to='/signin' className='sign-link'>
           sign in
         </Link>
       </p>

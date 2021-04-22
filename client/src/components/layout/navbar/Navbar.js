@@ -2,6 +2,8 @@ import './styles.css';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
+import LogoutBtn from './LogoutBtn';
+
 import LoggedInContext from '../../../context/LoggedInContext';
 
 const Navbar = () => {
@@ -36,7 +38,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link to='/logout' className='link'>
-                  Logout
+                  <LogoutBtn />
                 </Link>
               </li>
             </>
