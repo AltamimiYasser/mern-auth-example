@@ -1,12 +1,20 @@
 import React from 'react';
+import './styles.css';
 
-const ContactList = () => {
+const ContactList = ({ contacts }) => {
+  console.log(contacts);
   return (
-    <div>
-      <ul>
-        <li>List Here</li>
+    <>
+      <h2>Contacts</h2>
+      <ul className='items'>
+        {contacts.map((contact, i) => (
+          <li key={i} className='item'>
+            <span className='name'>{contact.name}</span>
+            <span className='number'>{contact.phoneNumber}</span>
+          </li>
+        ))}
       </ul>
-    </div>
+    </>
   );
 };
 

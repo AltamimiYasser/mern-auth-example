@@ -1,0 +1,43 @@
+* {
+  color: #000;
+}
+
+h2 {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 750px;
+  width: 100%;
+  background: #eee;
+  margin: 0 auto;
+}
+
+.item {
+  margin: 2px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.item:nth-child(even) {
+  background-color: #e4e4e4;
+}
+
+.item span {
+  text-align: center;
+}
+
+.name {
+  margin: auto;
+}
+
+.number {
+  margin: auto;
+}
